@@ -1,6 +1,7 @@
 module.exports = {
   root: true,
   env: {
+    browser: true,
     node: true,
   },
   extends: [
@@ -12,6 +13,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 2020,
   },
+  plugins: ["prettier"],
   rules: {
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
@@ -20,6 +22,5 @@ module.exports = {
     "vue/require-default-prop": "off",
     "vue/no-v-html": "off",
     "prettier/prettier": ["error", { endOfLine: "auto", singleQuote: false }],
-    quotes: "off", // ✅ 큰따옴표, 작은따옴표 모두 허용
   },
-};
+}

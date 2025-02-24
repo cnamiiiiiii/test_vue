@@ -1,12 +1,7 @@
 <template>
   <div class="container">
     <div class="left-layout">
-      <draggable
-        v-model="cards"
-        class="card-list"
-        @start="drag = true"
-        @end="drag = false"
-      >
+      <draggable v-model="cards" class="card-list" @start="drag = true" @end="drag = false">
         <template #item="{ element }">
           <div
             :key="element.id"
@@ -47,8 +42,8 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import draggable from "vuedraggable";
+import { ref } from "vue"
+import draggable from "vuedraggable"
 
 // 상태 선언
 const cards = ref([
@@ -79,22 +74,22 @@ const cards = ref([
     rightImg2: "111.png",
     rightImg3: "222.png",
   },
-]);
+])
 
-const selectedUrl = ref(null);
-const selectedImage = ref(null);
-const rightImg1 = ref(null);
-const rightImg2 = ref(null);
-const rightImg3 = ref(null);
+const selectedUrl = ref(null)
+const selectedImage = ref(null)
+const rightImg1 = ref(null)
+const rightImg2 = ref(null)
+const rightImg3 = ref(null)
 
 // 카드 클릭 시 이미지와 URL 설정
 const onCardClick = (url, clickImg, img1, img2, img3) => {
-  selectedUrl.value = url;
-  selectedImage.value = clickImg;
-  rightImg1.value = img1;
-  rightImg2.value = img2;
-  rightImg3.value = img3;
-};
+  selectedUrl.value = url
+  selectedImage.value = clickImg
+  rightImg1.value = img1
+  rightImg2.value = img2
+  rightImg3.value = img3
+}
 </script>
 
 <style scoped>
